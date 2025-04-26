@@ -6,7 +6,8 @@ public class CarListRepositoryImpl implements CarListRepository {
 
     @Override
     public Car get(int index) {
-        return null;
+        checkIndex(index);
+        return array[index];
     }
 
     @Override
