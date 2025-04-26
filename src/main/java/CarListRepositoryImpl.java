@@ -38,4 +38,10 @@ public class CarListRepositoryImpl implements CarListRepository {
     public void clear() {
 
     }
+
+    private void checkIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
 }
