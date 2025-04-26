@@ -14,7 +14,9 @@ public class CarListRepositoryImpl implements CarListRepository {
 
     @Override
     public void add(Car car) {
-
+        increaseArray();
+        array[size] = car;
+        size++;
     }
 
     @Override
