@@ -1,5 +1,9 @@
 public class CarListRepositoryImpl implements CarListRepository {
 
+    private Car[] array = new Car[10];
+
+    private int size = 0;
+
     @Override
     public Car get(int index) {
         return null;
