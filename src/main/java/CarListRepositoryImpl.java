@@ -50,12 +50,13 @@ public class CarListRepositoryImpl implements CarListRepository {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public void clear() {
-
+        array = new Car[10];
+        size = 0;
     }
 
     private void checkIndex(int index) {
