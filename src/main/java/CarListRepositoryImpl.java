@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CarListRepositoryImpl implements CarListRepository {
 
     private Car[] array = new Car[10];
@@ -43,6 +45,12 @@ public class CarListRepositoryImpl implements CarListRepository {
     private void checkIndex(int index) {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
+        }
+    }
+
+    private void increaseArray() {
+        if (size >= array.length) {
+            array = Arrays.copyOf(array, array.length * 2);
         }
     }
 }
