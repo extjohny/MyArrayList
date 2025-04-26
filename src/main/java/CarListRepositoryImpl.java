@@ -32,12 +32,20 @@ public class CarListRepositoryImpl implements CarListRepository {
 
     @Override
     public boolean remove(Car car) {
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(car)) {
+                return removeAt(i);
+            }
+        }
         return false;
     }
 
     @Override
     public boolean removeAt(int index) {
-        return false;
+        checkIndex(index);
+        System.arraycopy(array, index + 1, array, index, size - 1 - index);
+        size--;
+        return true;
     }
 
     @Override
