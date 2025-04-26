@@ -21,7 +21,13 @@ public class CarListRepositoryImpl implements CarListRepository {
 
     @Override
     public void add(Car car, int index) {
-
+        increaseArray();
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        System.arraycopy(array, index, array, index + 1, size - index);
+        array[index] = car;
+        size++;
     }
 
     @Override
